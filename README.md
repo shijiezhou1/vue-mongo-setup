@@ -52,8 +52,8 @@ heroku create
 ```
 git init
 git add .
-git commit -am "make it better"
-heroku git:remote -a vue-one
+git commit -am "upgrate"
+heroku git:remote -a vue-two
 git status
 git push heroku master
 
@@ -64,3 +64,4 @@ git push heroku master
 ```
 heroku open
 ```
+
