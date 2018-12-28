@@ -1,4 +1,4 @@
-# client
+# Follow this setup after you clone the project
 
 ## Project setup
 ```
