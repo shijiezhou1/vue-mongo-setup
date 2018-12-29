@@ -1,8 +1,18 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-
 const app = express();
+
+
+// START USING ROUTER
+const path = __dirname + '/views/'; //force it to another page
+
+app.get("/",function(req,res){
+    console.log(path);
+    res.sendFile(path + "index.html");
+});
+// END
+
 
 // MIDDLE WARE  
 
