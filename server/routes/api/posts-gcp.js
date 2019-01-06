@@ -8,8 +8,10 @@ secondRouter.get('/', async (req, res) => {
     res.send(await posts.find({}).toArray());
 });
 
+
 secondRouter.get('/about', function (req, res) {
-    const posts = await loadPostsCollection();   
+    console.log('about open');
+    const posts = await loadPostsCollection(); 
     res.send(await posts.find({}).toArray());
 })
 
