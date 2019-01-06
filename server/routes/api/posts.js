@@ -1,9 +1,7 @@
 const express = require('express');
 const mongodb = require('mongodb');
-
-// ROUTER 
-
 const router = express.Router();
+// ROUTER
 
 // GET POST 
 router.get('/', async (req, res) => {
@@ -12,11 +10,9 @@ router.get('/', async (req, res) => {
     const posts = await loadPostsCollection();
     res.send(await posts.find({}).toArray());
     // console.log('end '+new Date().getMilliseconds());
-    posts.close();
 });
 
 // ADD POST
-
 router.post('/', async (req, res) => {
     const posts = await loadPostsCollection();
     await posts.insertOne({
@@ -24,27 +20,22 @@ router.post('/', async (req, res) => {
        createdAt: new Date()
     });
     res.status(201).send();
-    posts.close();
 });
 
 
 // DELETE POST 
-
 router.delete('/:id', async (req, res) => {
     const posts = await loadPostsCollection();
     await posts.deleteOne({_id: new mongodb.ObjectID(req.params.id) })
     res.status(200).send();
-    posts.close();
 });
 
 // UPDATE POST
-
 async function loadPostsCollection() {
     // mlab.com 
     // const client = await mongodb.MongoClient.connect('mongodb://abc123:abc123@ds047207.mlab.com:47207/vue-mongodb', {
     //     useNewUrlParser: true
     // });
-
     // mongodb.com
     const client = await mongodb.MongoClient.connect('mongodb+srv://abc1234:abc1234@cluster0-7lnqj.mongodb.net/test?retryWrites=true', {
         useNewUrlParser: true

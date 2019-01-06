@@ -5,12 +5,12 @@ const app = express();
 
 
 // START USING ROUTER
-const path = __dirname + '/views/'; //force it to another page
+// const path = __dirname + '/views/'; //force it to another page
 
-app.get("/",function(req,res){
-    console.log(path);
-    res.sendFile(path + "index.html");
-});
+// app.get("/",function(req,res){
+//     console.log(path);
+//     res.sendFile(path + "index.html");
+// });
 // END
 
 
@@ -21,6 +21,10 @@ app.use(cors());
 
 const posts = require('./routes/api/posts');
 app.use('/api/posts/', posts);
+
+// SECOND MIDDLE WARE
+const gcpposts = require('./routes/api/posts-gcp');
+app.use('/api/posts-gcp/', gcpposts);
 
 // Handle production
 
