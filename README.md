@@ -47,7 +47,9 @@ heroku create
 
 ```
 
-### Git Push
+### Heroku Push
+
+Express does not allow two different cluster on expressjs.
 
 ```
 git init
@@ -56,7 +58,6 @@ git commit -am "upgrate"
 heroku git:remote -a vue-two
 git status
 git push heroku master
-
 ```
 
 ### View Deployment

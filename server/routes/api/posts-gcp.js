@@ -8,11 +8,6 @@ secondRouter.get('/', async (req, res) => {
     res.send(await posts.find({}).toArray());
 });
 
-secondRouter.get('/about', async (req, res) => {
-    const posts = await loadPostsCollection(); 
-    res.send(await posts.find({}).toArray());
-});
-
 // ADD POST
 secondRouter.post('/', async (req, res) => {
     const posts = await loadPostsCollection();

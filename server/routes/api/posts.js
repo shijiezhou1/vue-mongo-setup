@@ -43,16 +43,4 @@ async function loadPostsCollection() {
     return client.db('vue-mongodb').collection('posts');
 }
 
-router.get('/about', async (req, res) => {
-    const posts = await loadPostsCollection2(); 
-    res.send(await posts.find({}).toArray());
-});
-
-async function loadPostsCollection2(){
-    const client = await mongodb.MongoClient.connect('mongodb+srv://abc1234:abc1234@cluster0-vmgmj.gcp.mongodb.net/test?retryWrites=true', {
-        useNewUrlParser: true
-    });
-    return client.db('vue-mongodb').collection('posts');
-}
-
 module.exports = router;
