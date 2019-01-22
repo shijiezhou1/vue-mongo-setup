@@ -3,6 +3,10 @@ const mongodb = require('mongodb');
 const router = express.Router();
 // ROUTER
 
+
+// Global Mongo Object 
+
+
 // GET POST 
 router.get('/', async (req, res) => {
     // res.send('hello');
@@ -10,6 +14,7 @@ router.get('/', async (req, res) => {
     const posts = await loadPostsCollection();
     res.send(await posts.find({}).toArray());
     // console.log('end '+new Date().getMilliseconds());
+    mongodb.MongoClient('mongodb+srv://abc1234:abc1234@cluster0-7lnqj.mongodb.net/test?retryWrites=true').close();
 });
 
 // ADD POST
@@ -20,6 +25,7 @@ router.post('/', async (req, res) => {
        createdAt: new Date()
     });
     res.status(201).send();
+    mongodb.MongoClient('mongodb+srv://abc1234:abc1234@cluster0-7lnqj.mongodb.net/test?retryWrites=true').close();
 });
 
 
@@ -28,6 +34,7 @@ router.delete('/:id', async (req, res) => {
     const posts = await loadPostsCollection();
     await posts.deleteOne({_id: new mongodb.ObjectID(req.params.id) })
     res.status(200).send();
+    mongodb.MongoClient('mongodb+srv://abc1234:abc1234@cluster0-7lnqj.mongodb.net/test?retryWrites=true').close();
 });
 
 // UPDATE POST
@@ -37,6 +44,7 @@ async function loadPostsCollection() {
     //     useNewUrlParser: true
     // });
     // mongodb.com
+
     const client = await mongodb.MongoClient.connect('mongodb+srv://abc1234:abc1234@cluster0-7lnqj.mongodb.net/test?retryWrites=true', {
         useNewUrlParser: true
     });

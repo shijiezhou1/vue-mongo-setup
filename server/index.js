@@ -15,7 +15,6 @@ const app = express();
 
 
 // MIDDLE WARE  
-
 app.use(bodyParser.json());
 app.use(cors());
 
@@ -25,6 +24,9 @@ app.use('/api/posts/', posts);
 // SECOND MIDDLE WARE
 const gcpposts = require('./routes/api/posts-gcp');
 app.use('/api/posts-gcp/', gcpposts);
+
+const posts2 = require('./routes/api/post2');
+app.use('/api/post2s/', posts2);
 
 // Handle production
 
