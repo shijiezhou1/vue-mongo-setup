@@ -1,3 +1,17 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Project help you setup mongodb in vue 1 minute (MEVN)](#project-help-you-setup-mongodb-in-vue-1-minute-mevn)
+- [To run the project](#to-run-the-project)
+  - [To submit project to git](#to-submit-project-to-git)
+    - [GH deploy](#gh-deploy)
+    - [Setup Express - USING HEROKU](#setup-express---using-heroku)
+    - [Create Heroku App Deployment](#create-heroku-app-deployment)
+    - [Heroku Push](#heroku-push)
+    - [View Deployment](#view-deployment)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Project help you setup mongodb in vue 1 minute (MEVN)
 
 ```
