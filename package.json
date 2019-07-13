@@ -14,7 +14,7 @@
     "@vue/cli": "^3.9.2",
     "body-parse": "^0.1.0",
     "cors": "^2.8.5",
-    "express": "^4.16.4",
+    "express": "^4.17.1",
     "mongodb": "^3.2.7"
   },
   "devDependencies": {
